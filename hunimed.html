@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./hunimed.favicon.ico" type="image/x-icon" />
+    <title>Hunimed</title>
+    <link rel="stylesheet" href="./hunimed.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="navbar">
+        <img src="./hu1.svg" alt="logo" class="logo" />
+        <div class="rightnav">
+          <button id="select">
+            <span>EN</span> <i class="fa-solid fa-caret-down"></i>
+            <div id="dropdown">
+              <div class="optionone">
+                <img src="./italyflag.png" class="italy" alt="italy" />
+                <h1 class="it">IT</h1>
+              </div>
+              <div class="optiontwo">
+                <img src="./uk.png" class="uk" alt="uk" />
+                <h1 class="en">EN</h1>
+              </div>
+            </div>
+          </button>
+          <button class="login">
+            <a href="http://127.0.0.1:5500/hunimed/hunimed.html">Login</a>
+          </button>
+          <button class="register">
+            <a href="http://127.0.0.1:5500/hunimed/hunimedregister.html"
+              >Register</a
+            >
+          </button>
+        </div>
+      </div>
+    <div class="form-container">
+      <div class="box">
+        <form onsubmit="submitForm(event)">
+          <h1 class="logintext">Login</h1>
+          <div id="emailBox">
+            <label for="email" class="email">Email Address</label>
+            <input type="email" id="email" />
+            <p id="error"></p>
+          </div>
+          <div class="passwordDiv">
+            <label for="password" class="password">Password</label>
+            <input type="password" id="password" />
+            <span class="show-password" onclick="showPassword()">
+              <i class="fa-solid fa-eye-slash"></i>
+            </span>
+          </div>
+          <p id="passworderror"></p>
+          <button type="submit" class="button">Login</button>
+          <p class="forgot">
+            <a href="https://hunimed-nightly.kotukodev.it/auth/forgot-password">
+              Forgot Password?
+            </a>
+          </p>
+          <hr class="hr">
+          <a
+            href="https://hunimed-nightly.kotukodev.it/auth/forgot-password"
+            class="create"
+          >
+            Don't have an account? Register Now
+            <i class="fa-solid fa-angles-right"></i>
+          </a>
+        </form>
+      </div>
+    </div>
+  <div class="footer-container">
+   <footer class="footer">
+        <div class="rows">
+          <ul class="links">
+            <li>
+              <a href="https://www.hunimed.eu/" target="_blank"
+                >Humanitas University
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.hunimed.eu/course/medicine/transfer-to-humanitas-university/"
+                target="_blank"
+                >Transfer to Humanitas</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://hunimed-nightly-api.kotukodev.it/file/PrivacyPolicyEn.pdf"
+                target="_blank"
+                >Privacy Policy</a
+              >
+            </li>
+           </ul>
+          <ul class="support">
+            <li>
+              <p class="supporttext">
+                Support:
+                <a href="mailto:support@st.hunimed.eu"> support@st.hunimed.eu</a>
+              </p>
+            </li>
+            <li>
+              <p class="info">
+                Info:
+                <a href="mailto:transfer@hunimed.eu">transfer@hunimed.eu</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright">
+          <h1 class="copy">
+            &copy;&nbsp;2023 Hunimed University Transfer Application Portal. All rights
+            reserved.
+          </h1>
+        </div>
+      </footer>
+  </div>
+    </main>
+  </body>
+  <script src="./hunimed.js"></script>
+</html>

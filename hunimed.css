@@ -1,0 +1,445 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+    background-color: rgb(0, 120, 90);
+}
+
+.rightnav {
+    display: flex;
+
+}
+
+.logo {
+    height: 40px;
+    width: 180px;
+}
+
+#select {
+    padding: 0 16px;
+    background-color: rgb(0, 120, 90);
+    position: relative;
+    border: 1px solid rgb(240, 237, 237);
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#select:hover {
+    background-color: #DD6B20;
+}
+
+#select i {
+    padding-left: 6px;
+    opacity: 0.7;
+    width: 16px;
+    height: 16px;
+}
+
+#dropdown {
+    position: absolute;
+    margin-top: 22px;
+    left: 0;
+    padding: 10px;
+    height: 90px;
+    width: 210px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #4c4c56;
+    cursor: pointer;
+}
+
+.optionone {
+    display: flex;
+    gap: 8px;
+    padding: 5px;
+}
+
+.optionone:hover {
+    background-color: #606067;
+}
+
+.italy {
+    width: 30px;
+}
+
+.it {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+}
+
+.optiontwo {
+    display: flex;
+    gap: 8px;
+    padding: 7px;
+
+}
+
+.optiontwo:hover {
+    background-color: #606067;
+}
+
+.uk {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.en {
+    font-size: 16px;
+    line-height: 24px;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+}
+
+.login {
+    padding: 0px 16px;
+    margin: 0px 16px;
+    border: 1px solid rgb(240, 237, 237);
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    background-color: rgb(0, 120, 90);
+    cursor: pointer;
+}
+
+.login a {
+    text-decoration: none;
+    color: white;
+}
+
+.login:hover {
+    border-color: rgb(16, 16, 16);
+
+}
+
+.login a:hover {
+    color: black;
+}
+
+.register {
+    padding: 0px 16px;
+    background-color: #DD6B20;
+    border: none;
+    color: white;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.register a {
+    text-decoration: none;
+    color: white;
+}
+
+.register:hover {
+    color: black;
+    background-color: #bb5612;
+}
+
+.form-container {
+    flex: 1 1 0%;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.box{
+        max-width: 28rem;
+        margin-inline: auto;
+        margin-top: 4rem;
+        padding: 1rem;
+        border-width: 1px;
+        border: 1px solid #dbdbdb;
+        text-align: left;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        display: flex;
+        flex-direction: column;
+}
+
+.email {
+    display: block;
+    font-size: 1rem;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border: 1px solid #dedede;
+    border-radius: 6px;
+}
+
+.password {
+    margin-top: 6px;
+    color: rgb(26, 32, 44);
+}
+
+#error {
+    font-size: 14px;
+    color: #F56565;
+    bottom: 15px;
+    position: relative;
+}
+
+#passworderror {
+    position: relative;
+    bottom: 15px;
+    color: #F56565;
+    font-size: 14px;
+
+}
+
+.button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 16px;
+    font-size: 16px;
+    line-height: 19px;
+    color: white;
+    background-color: #DD6B20;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    color: black;
+    background-color: #bb5612;
+}
+
+.passwordDiv {
+    position: relative;
+}
+
+
+.show-password {
+    position: absolute;
+    top: 30px;
+    right: 14px;
+    padding: 5px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.show-password i {
+    font-size: 10px;
+}
+
+.create {
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(0, 120, 90);
+    cursor: pointer;
+}
+
+.logintext {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: rgb(26, 32, 44);
+    margin-bottom: 1.5rem;
+}
+
+.forgot {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.forgot a {
+    text-decoration: none;
+    color: #1A202C;
+}
+
+.hr {
+    margin-top: 10px;
+    border: 1px solid rgb(225, 224, 224);
+}
+
+.footer-container {
+    display: flex;
+}
+
+.footer {
+    margin-top: 5rem;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: rgb(0, 120, 90);
+}
+
+
+.rows {
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.links li {
+    list-style: none;
+}
+
+.links li a {
+    font-size: 0.875rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 200;
+}
+
+.links li a:hover {
+    text-decoration: underline;
+}
+
+.copy {
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.support {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.supporttext {
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.support li {
+    list-style: none;
+    color: white;
+}
+
+.info {
+    font-size: 14px;
+    padding-left: 30px;
+    font-weight: 200;
+}
+
+.support li a {
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.support li a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+
+    body {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 24px;
+        gap: 0;
+    }
+
+    #select {
+        padding: 8px 16px;
+    }
+
+    #dropdown {
+        position: absolute;
+        top: 10px;
+        left: 5px;
+        width: 200px;
+        height: 90px;
+    }
+
+    .button {
+        margin-top: 15px;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .footer {
+        text-align: center;
+        width: 100%;
+    }
+
+    .rows {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        text-align: start;
+    }
+
+    .supporttext {
+        text-align: left;
+    }
+
+    .copyright {
+        padding-top: 20px;
+        text-align: left;
+    }
+
+    .info {
+        padding-bottom: 10px;
+    }
+
+
+}
