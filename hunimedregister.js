@@ -1,18 +1,12 @@
 
 function checkFirstName() {
     const firstName = document.getElementById("firstName");
-    firstName.addEventListener("input",()=>{
-        firstName.value = firstName.value.replace(/\s/g,"")
-    })
     const fname = document.getElementById("fname");
     validateInput(firstName, fname, "First Name");
 }
 
 function checkLastName() {
     const lastName = document.getElementById("lastName");
-    lastName.addEventListener("input",()=>{
-        lastName.value = lastName.value.replace(/\s/g,"")
-    })
     const lname = document.getElementById("lname");
     validateInput(lastName, lname, "Last Name");
 }
@@ -20,28 +14,22 @@ function checkLastName() {
 
 function passwordField() {
     const password = document.getElementById("passwordKey");
-    password.addEventListener("input",()=>{
-        password.value = password.value.replace(/\s/g,"")
-    })
     const passwordError = document.getElementById("passworderror")
     validateInput(password, passwordError, "Password");
 }
 
 function confirmPasswordField() {
     const confirmPassword = document.getElementById("confirmPassword");
-    confirmPassword.addEventListener("input",()=>{
-        confirmPassword.value = confirmPassword.value.replace(/\s/g,"")       
-    })
     const passwordKey = document.getElementById("passwordKey");
     const confirmPasswordError = document.getElementById("confirmpassworderror");
-    passwordLength(confirmPassword,confirmPasswordError,"Password")
+    passwordLength(confirmPassword, confirmPasswordError, "Password")
 
     if (confirmPassword.value === "") {
-            confirmPasswordError.innerText = "Password is required"
-    } else if (confirmPassword.value.length <8) {
-            confirmPasswordError.innerText =`${errorMessage}`
+        confirmPasswordError.innerText = "Password is required"
+    } else if (confirmPassword.value.length < 8) {
+        confirmPasswordError.innerText = `${errorMessage}`
     } else if (passwordKey.value !== confirmPassword.value) {
-                confirmPasswordError.innerText="Password doesn't match"
+        confirmPasswordError.innerText = "Password doesn't match"
     } else {
         confirmPassword.innerText = ""
     }
@@ -114,25 +102,24 @@ function checkBox() {
 }
 
 
-function checkEmail(){
+function checkEmail() {
     const email = document.getElementById("email");
     const emailError = document.getElementById("emailError");
     const mailformat = /^[\w-\.]+@([\w-]+\.)+[\w-]{3,4}$/;
 
-    if(email.value === ""){
-        emailError.innerText ="Email Address is required"
-    }else if(email.value.match(mailformat)){
-        emailError.innerText =""
+    if (email.value === "") {
+        emailError.innerText = "Email Address is required"
+    } else if (email.value.match(mailformat)) {
+        emailError.innerText = ""
     }
-    else{
-        emailError.innerText="Email Address is invalid"
+    else {
+        emailError.innerText = "Email Address is invalid"
     }
 
 }
 
 
-function registerForm(e) {
-    e.preventDefault();
+function registerForm() {
     checkFirstName();
     checkLastName();
     checkEmail();
@@ -141,15 +128,80 @@ function registerForm(e) {
 
 }
 
-const dropDown = document.getElementById("dropdown");
-dropDown.style.display = "none"
+
+const languages = document.getElementById("languages");
+languages.style.display = "none"
 const select = document.getElementById("select");
 select.addEventListener("click", () => {
-    const currentDisplay = dropDown.style.display;
+    const currentDisplay = languages.style.display;
 
     if (currentDisplay === "none") {
-        dropDown.style.display = "block"
+        languages.style.display = "block"
     } else {
-        dropDown.style.display = "none"
+        languages.style.display = "none"
     }
 });
+
+const translations = {
+    it: {
+        en:"EN", 
+        it:"IT",
+        login: "Accedi",
+        register: "Registrati",
+        registerText: "Registrazione",
+        firstname: "Nome",
+        lastname: "Cognome",
+        email: "Indirizzo email",
+        langPassword: "Password",
+        langConfirmPassword: "Conferma password",
+        langPrivacy: "ho letto e accetto l'informativa sulla Privacy",
+        existingAccount: "Hai già un account? Accedi ora",
+        btn: "Registrati",
+        transfer: "Trasferisci a Humanitas",
+        information: "Informativa sulla privacy",
+        supporttext: "Supporto:support@st.hunimed.eu",
+        info: "Informazioni:transfer@hunimed.eu"
+    },
+    en:{
+        en:"EN",
+        it:"IT",
+        login: "Login",
+        register: "Register",
+        registerText: "Register",
+        firstname: "First Name",
+        lastname: "Last Name",
+        email: "Email Address",
+        langPassword: "Password",
+        langConfirmPassword: "Confirm password",
+        langPrivacy: "I have read and accept the Privacy disclaimer",
+        existingAccount: "Have an account? Login Now",
+        btn: "Register",
+        transfer: "Transfer to  Humanitas",
+        information: "Privacy Policy",
+        supporttext: "Support:support@st.hunimed.eu",
+        info: "Info:transfer@hunimed.eu"
+    }
+}
+
+function changeLanguage(language){
+
+    const translate = document.querySelectorAll(".translate");
+    translate.forEach((itm=>{
+        const classNames = itm.classList[0];
+        itm.innerText= translations[language][classNames];
+    }))
+}
+
+
+
+    document.getElementById("it").addEventListener("click",()=>{
+        document.getElementById("selectedLang").innerText = "IT";
+        changeLanguage("it")
+
+    })
+    
+    document.getElementById("en").addEventListener("click",()=>{
+        document.getElementById("selectedLang").innerText = "EN";
+        changeLanguage("en");
+    })
+
