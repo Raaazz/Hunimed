@@ -10,3 +10,21 @@ select.addEventListener("click", () => {
         languages.style.display = "none"
     }
 });
+
+
+function checkEmail(){
+    const email = document.getElementById("email")
+    const emailValue = email.value.trim();
+
+    if(email === ""){
+        emailValue.focus();
+        return false
+    }
+        return true
+}
+
+
+function forgotPassword(e){
+    e.preventDefault();
+
+}
