@@ -12,19 +12,11 @@ select.addEventListener("click", () => {
 });
 
 
-function checkEmail(){
-    const email = document.getElementById("email")
-    const emailValue = email.value.trim();
-
-    if(email === ""){
-        emailValue.focus();
-        return false
-    }
-        return true
-}
-
 
 function forgotPassword(e){
     e.preventDefault();
+    document.getElementById("email").focus();
+
+
 
 }

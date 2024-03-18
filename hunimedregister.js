@@ -14,8 +14,9 @@ function checkLastName() {
 
 function passwordField() {
     const password = document.getElementById("passwordKey");
-    const passwordError = document.getElementById("passworderror")
-    validateInput(password, passwordError, "Password");
+    const passwordError = document.getElementById("passwordError")
+    console.log(passwordError)
+    validateInput(password,passwordError,"Password")
 }
 
 function confirmPasswordField() {
@@ -27,7 +28,7 @@ function confirmPasswordField() {
     if (confirmPassword.value === "") {
         confirmPasswordError.innerText = "Password is required"
     } else if (confirmPassword.value.length < 8) {
-        confirmPasswordError.innerText = `${errorMessage}`
+        confirmPasswordError.innerText = `Password must be atleast 8 characters`
     } else if (passwordKey.value !== confirmPassword.value) {
         confirmPasswordError.innerText = "Password doesn't match"
     } else {
@@ -119,11 +120,13 @@ function checkEmail() {
 }
 
 
-function registerForm() {
+function registerForm(e) {
+    e.preventDefault();
     checkFirstName();
     checkLastName();
     checkEmail();
-    confirmPasswordField()
+    passwordField();
+    confirmPasswordField();
     checkBox();
 
 }
